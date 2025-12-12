@@ -56,9 +56,7 @@ const Login = () => {
 
           {/* Title */}
           <h1 className="text-center text-xl md:text-2xl font-light tracking-[0.2em] uppercase text-foreground mb-2">TORUSLAB</h1>
-          <p className="text-center text-sm text-muted-foreground tracking-widest uppercase mb-8">
-            Unificado
-          </p>
+          <p className="text-center text-sm text-muted-foreground tracking-widest uppercase mb-8">ECOSSISTEMA JURÍDICO</p>
 
           {/* Login Form */}
           <form onSubmit={handleLogin} className="space-y-6">
