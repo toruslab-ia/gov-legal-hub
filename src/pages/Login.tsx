@@ -1,8 +1,9 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { Shield, Lock, User } from "lucide-react";
+import { Lock, User } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import logoTorus from "@/assets/logo-torus.png";
 import { Label } from "@/components/ui/label";
 import { useToast } from "@/hooks/use-toast";
 import HudBackground from "@/components/HudBackground";
@@ -42,18 +43,13 @@ const Login = () => {
     <HudBackground>
       <div className="min-h-screen flex items-center justify-center p-4">
         <div className="w-full max-w-md animate-fade-in" style={{ animationDelay: "0.1s" }}>
-          {/* Logo/Shield */}
+          {/* Logo */}
           <div className="flex justify-center mb-8">
-            <div className="relative">
-              <div className="w-20 h-20 border border-secondary/50 flex items-center justify-center bg-card/50 backdrop-blur-sm">
-                <Shield className="w-10 h-10 text-primary animate-glow-pulse" strokeWidth={1} />
-              </div>
-              {/* Corner accents */}
-              <div className="absolute -top-1 -left-1 w-4 h-4 border-t border-l border-primary" />
-              <div className="absolute -top-1 -right-1 w-4 h-4 border-t border-r border-primary" />
-              <div className="absolute -bottom-1 -left-1 w-4 h-4 border-b border-l border-primary" />
-              <div className="absolute -bottom-1 -right-1 w-4 h-4 border-b border-r border-primary" />
-            </div>
+            <img 
+              src={logoTorus} 
+              alt="Torus Lab" 
+              className="w-24 h-24 md:w-28 md:h-28 object-contain animate-glow-pulse"
+            />
           </div>
 
           {/* Title */}
