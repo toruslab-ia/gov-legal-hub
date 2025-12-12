@@ -6,42 +6,40 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { useToast } from "@/hooks/use-toast";
 import HudBackground from "@/components/HudBackground";
-
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
-  const { toast } = useToast();
-
+  const {
+    toast
+  } = useToast();
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsLoading(true);
 
     // Simulate authentication
-    await new Promise((resolve) => setTimeout(resolve, 1000));
-
+    await new Promise(resolve => setTimeout(resolve, 1000));
     if (email === "demo@toruslab.com" && password === "12345") {
       toast({
         title: "Acesso autorizado",
-        description: "Bem-vindo ao Sistema Jurídico Unificado",
+        description: "Bem-vindo ao Sistema Jurídico Unificado"
       });
       navigate("/dashboard");
     } else {
       toast({
         title: "Acesso negado",
         description: "Credenciais inválidas. Tente novamente.",
-        variant: "destructive",
+        variant: "destructive"
       });
     }
-
     setIsLoading(false);
   };
-
-  return (
-    <HudBackground>
+  return <HudBackground>
       <div className="min-h-screen flex items-center justify-center p-4">
-        <div className="w-full max-w-md animate-fade-in" style={{ animationDelay: "0.1s" }}>
+        <div className="w-full max-w-md animate-fade-in" style={{
+        animationDelay: "0.1s"
+      }}>
           {/* Logo/Shield */}
           <div className="flex justify-center mb-8">
             <div className="relative">
@@ -57,9 +55,7 @@ const Login = () => {
           </div>
 
           {/* Title */}
-          <h1 className="text-center text-xl md:text-2xl font-light tracking-[0.2em] uppercase text-foreground mb-2">
-            Acesso ao Sistema
-          </h1>
+          <h1 className="text-center text-xl md:text-2xl font-light tracking-[0.2em] uppercase text-foreground mb-2">TORUSLAB</h1>
           <p className="text-center text-sm text-muted-foreground tracking-widest uppercase mb-8">
             Unificado
           </p>
@@ -81,15 +77,7 @@ const Login = () => {
                   </Label>
                   <div className="relative">
                     <User className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
-                    <Input
-                      id="email"
-                      type="email"
-                      value={email}
-                      onChange={(e) => setEmail(e.target.value)}
-                      placeholder="usuario@email.com"
-                      className="pl-10 bg-input/50 border-secondary/30 focus:border-primary text-foreground placeholder:text-muted-foreground/50"
-                      required
-                    />
+                    <Input id="email" type="email" value={email} onChange={e => setEmail(e.target.value)} placeholder="usuario@email.com" className="pl-10 bg-input/50 border-secondary/30 focus:border-primary text-foreground placeholder:text-muted-foreground/50" required />
                   </div>
                 </div>
 
@@ -100,32 +88,16 @@ const Login = () => {
                   </Label>
                   <div className="relative">
                     <Lock className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
-                    <Input
-                      id="password"
-                      type="password"
-                      value={password}
-                      onChange={(e) => setPassword(e.target.value)}
-                      placeholder="••••••••"
-                      className="pl-10 bg-input/50 border-secondary/30 focus:border-primary text-foreground placeholder:text-muted-foreground/50"
-                      required
-                    />
+                    <Input id="password" type="password" value={password} onChange={e => setPassword(e.target.value)} placeholder="••••••••" className="pl-10 bg-input/50 border-secondary/30 focus:border-primary text-foreground placeholder:text-muted-foreground/50" required />
                   </div>
                 </div>
 
                 {/* Submit button */}
-                <Button
-                  type="submit"
-                  disabled={isLoading}
-                  className="w-full h-12 bg-primary hover:bg-primary/90 text-primary-foreground font-medium uppercase tracking-widest transition-all duration-300 hover:shadow-[0_0_30px_hsl(var(--glow-green)/0.4)]"
-                >
-                  {isLoading ? (
-                    <div className="flex items-center gap-2">
+                <Button type="submit" disabled={isLoading} className="w-full h-12 bg-primary hover:bg-primary/90 text-primary-foreground font-medium uppercase tracking-widest transition-all duration-300 hover:shadow-[0_0_30px_hsl(var(--glow-green)/0.4)]">
+                  {isLoading ? <div className="flex items-center gap-2">
                       <div className="w-4 h-4 border-2 border-primary-foreground/30 border-t-primary-foreground rounded-full animate-spin" />
                       <span>Verificando...</span>
-                    </div>
-                  ) : (
-                    "Acessar Sistema"
-                  )}
+                    </div> : "Acessar Sistema"}
                 </Button>
               </div>
             </div>
@@ -153,8 +125,6 @@ const Login = () => {
           </div>
         </div>
       </div>
-    </HudBackground>
-  );
+    </HudBackground>;
 };
-
 export default Login;
