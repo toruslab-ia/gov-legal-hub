@@ -55,7 +55,7 @@ const Login = () => {
           </div>
 
           {/* Title */}
-          <h1 className="text-center text-xl md:text-2xl font-light tracking-[0.2em] uppercase text-foreground mb-2">TORUSLAB</h1>
+          <h1 className="text-center text-xl md:text-2xl font-light tracking-[0.2em] uppercase text-foreground mb-2">TORUSFLOW</h1>
           <p className="text-center text-sm text-muted-foreground tracking-widest uppercase mb-8">ECOSSISTEMA JURÍDICO</p>
 
           {/* Login Form */}
